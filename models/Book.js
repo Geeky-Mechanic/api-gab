@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// ADD ADDRESS AND POSTAL CODE AND REJECTED
 const BookSchema = new mongoose.Schema(
     {
         name: {
@@ -18,12 +18,23 @@ const BookSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        date: {
-            type: String,
+        begHour: {
+            type: Number,
+            required: true,
+        },
+        endHour: {
+            type: Number,
+            required: true,
+        },
+        completed: {
+            type: Boolean,
+            require: true,
+        },
+        confirmed: {
+            type: Boolean,
             required: true,
         }
     },
-    {timestamps: true}
 );
 
 module.exports = mongoose.model("Book", BookSchema);
